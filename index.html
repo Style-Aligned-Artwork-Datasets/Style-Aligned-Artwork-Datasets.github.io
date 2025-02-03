@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="fruit-SALAD: A Style Aligned Artwork Dataset to
+        reveal similarity perception in image embeddings">
+  <meta name="keywords" content="visual similarity, benchmark, image embeddings">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Google scholar tags-->
+  <meta name="citation_title" content="fruit-SALAD: A Style Aligned Artwork Dataset to reveal similarity perception in image embeddings" />
+  <meta name="citation_author" content="Tillmann Ohm" />
+  <meta name="citation_author" content="Andres Karjus" />
+  <meta name="citation_author" content="Mikhail Tamm" />
+  <meta name="citation_author" content="Maximilian Schich" />
+  <meta name="citation_journal_title" content="arXiv" />
+  <meta name="citation_abstract" content="The notion of visual similarity is essential for computer vision, and in applications and studies revolving around vector embeddings of images. However, the scarcity of benchmark datasets poses a significant hurdle in exploring how these models perceive similarity. Here we introduce Style Aligned Artwork Datasets (SALADs), and an example of fruit-SALAD with 10,000 images of fruit depictions. This combined semantic category and style benchmark comprises 100 instances each of 10 easy-to-recognize fruit categories, across 10 easy distinguishable styles. Leveraging a systematic pipeline of generative image synthesis, this visually diverse yet balanced benchmark demonstrates salient differences in semantic category and style similarity weights across various computational models, including machine learning models, feature extraction algorithms, and complexity measures, as well as conceptual models for reference. This meticulously designed dataset offers a controlled and balanced platform for the comparative analysis of similarity perception. The SALAD framework allows the comparison of how these models perform semantic category and style recognition task to go beyond the level of anecdotal knowledge, making it robustly quantifiable and qualitatively interpretable."/>
+  <meta name="citation_pdf_url" content="https://arxiv.org/abs/2406.01278" />
+  
+  <title>fruit-SALAD: A Style Aligned Artwork Dataset to reveal similarity perception in image embeddings</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"> 
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <style>
+    ul {
+      list-style-type: disc; /* This sets the default bullet style */
+    }
+  </style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">fruit-SALAD:</h1>
+          <h2 class="is-size-3 publication-title">
+            A Style Aligned Artwork Dataset to reveal similarity perception in image embeddings
+          </h2>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://tillmannohm.com/">Tillmann Ohm</a><sup>‡</sup><sup>1</sup><sup>,</sup><sup>4</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://andreskarjus.github.io/">Andres Karjus</a><sup>2</sup><sup>,</sup><sup>4</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://andreskarjus.github.io/">Mikhail Tamm</a><sup>1</sup><sup>,</sup><sup>4</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.schich.info/">Maximilian Schich</a><sup>3</sup><sup>,</sup><sup>4</sup>
+            </span>
+          </div>
+
+          <div class="is-size-6 publication-authors">
+            <span class="author-block"><sup>1</sup><a href="https://www.tlu.ee/en/dt">School of Digital Technology, Tallinn University, Estonia</a></span>
+            <span class="author-block"><sup>2</sup><a href="https://www.tlu.ee/en/ht">School of Humanities, Tallinn University, Estonia</a></span>
+            <span class="author-block"><sup>3</sup><a href="https://www.tlu.ee/en/bfm">Baltic Film, Media, and Arts School, Tallinn University, Estonia</a></span><br/>
+            <!-- <span class="author-block"><sup>4</sup><a href="http://cudan.tlu.ee/">ERA Chair for Cultural Data Analytics, Tallinn University, Estonia</a></span><br/> -->
+            <span class="author-block"><sup>‡</sup>Corresponding author: mail@tillmannohm.com</span><br/>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://style-aligned-artwork-datasets.github.io/fruit-explorer"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-desktop"></i>
+                  </span>
+                  <span>fruit-SALAD Explorer (interactive)</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2406.01278"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>fruit-SALAD Paper (ArXiv)</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://zenodo.org/records/11158522"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-zenodo"></i>
+                  </span>
+                  <span>fruit-SALAD_10k Dataset (Zenodo)</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <!--
+              <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>CSN Video Tutorials</span>
+                </a>
+              </span>
+              -->
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/Style-Aligned-Artwork-Datasets/fruit-SALAD"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>fruit-SALAD Code (GitHub)</span>
+                  </a>
+              </span>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <img src="./static/images/fruit-SALAD_overview.png">
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            The notion of visual similarity is essential for computer vision, and in applications and studies revolving around vector
+            embeddings of images. However, the scarcity of benchmark datasets poses a significant hurdle in exploring how these
+            models perceive similarity. Here we introduce Style Aligned Artwork Datasets (SALADs), and an example of fruit-SALAD with
+            10,000 images of fruit depictions. This combined semantic category and style benchmark comprises 100 instances each of
+            10 easy-to-recognize fruit categories, across 10 easy distinguishable styles. Leveraging a systematic pipeline of generative
+            image synthesis, this visually diverse yet balanced benchmark demonstrates salient differences in semantic category and style
+            similarity weights across various computational models, including machine learning models, feature extraction algorithms, and
+            complexity measures, as well as conceptual models for reference. This meticulously designed dataset offers a controlled and
+            balanced platform for the comparative analysis of similarity perception. The SALAD framework allows the comparison of how
+            these models perform semantic category and style recognition task to go beyond the level of anecdotal knowledge, making it
+            robustly quantifiable and qualitatively interpretable.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+</section>
+
+<section class="section">
+<!-- Acknowledgements. -->
+<div class="columns is-centered">
+  <div class="column is-full-width">
+    <h2 class="title is-3">Acknowledgements</h2>
+
+    <div class="content has-text-justified">
+      All authors are supported by the CUDAN ERA Chair project for Cultural Data Analytics, funded through the European Union’s
+      Horizon 2020 research and innovation program (Grant No. 810961).
+    </div>
+  </div>
+</div>
+<!--/ Acknowledgements. -->
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>
+      @misc{ohm2024fruitsaladstylealignedartwork,
+        title={fruit-SALAD: A Style Aligned Artwork Dataset to reveal similarity perception in image embeddings}, 
+        author={Tillmann Ohm and Andres Karjus and Mikhail Tamm and Maximilian Schich},
+        year={2024},
+        eprint={2406.01278},
+        archivePrefix={arXiv},
+        primaryClass={cs.CV},
+        url={https://arxiv.org/abs/2406.01278}, 
+  }
+    </code></pre>
+  </div>
+</section>
+
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered">
+<!-- Concurrent Work. -->
+<div class="columns is-centered">
+  <div class="column is-full-width">
+    <h2 class="title is-3">Related Work</h2>
+
+    <div class="content has-text-justified">
+      <p>
+        The fruit-SALAD Explorer is based on our <a href="https://collection-space-navigator.github.io/" target="_blank">Collection Space Navigator.</a>
+      </p>
+    </div>
+  </div>
+</div>
+<!--/ Concurrent Work. -->
+</div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <!-- <a class="icon-link"
+         href="./static/CSN_vinci23_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a> -->
+      <a class="icon-link" href="https://github.com/Style-Aligned-Artwork-Datasets/" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content has-text-centered">
+          <p>
+            This website build using the <a
+              href="https://github.com/nerfies/nerfies.github.io">nerfies template</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
