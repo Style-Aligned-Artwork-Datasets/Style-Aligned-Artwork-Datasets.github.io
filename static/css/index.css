@@ -155,3 +155,11 @@ body {
 #interpolation-image-wrapper img {
   border-radius: 5px;
 }
+
+.margin-right {
+  margin-right: 40px;
+}
+
+.margin-bottom {
+  margin-bottom: 40px;
+}
