@@ -27,7 +27,7 @@
   <meta name="citation_author" content="Maximilian Schich" />
   <meta name="citation_journal_title" content="arXiv" />
   <meta name="citation_abstract" content="The notion of visual similarity is essential for computer vision, and in applications and studies revolving around vector embeddings of images. However, the scarcity of benchmark datasets poses a significant hurdle in exploring how these models perceive similarity. Here we introduce Style Aligned Artwork Datasets (SALADs), and an example of fruit-SALAD with 10,000 images of fruit depictions. This combined semantic category and style benchmark comprises 100 instances each of 10 easy-to-recognize fruit categories, across 10 easy distinguishable styles. Leveraging a systematic pipeline of generative image synthesis, this visually diverse yet balanced benchmark demonstrates salient differences in semantic category and style similarity weights across various computational models, including machine learning models, feature extraction algorithms, and complexity measures, as well as conceptual models for reference. This meticulously designed dataset offers a controlled and balanced platform for the comparative analysis of similarity perception. The SALAD framework allows the comparison of how these models perform semantic category and style recognition task to go beyond the level of anecdotal knowledge, making it robustly quantifiable and qualitatively interpretable."/>
-  <meta name="citation_pdf_url" content="https://arxiv.org/abs/2406.01278" />
+  <meta name="citation_pdf_url" content="https://www.nature.com/articles/s41597-025-04529-4" />
   
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
@@ -103,7 +103,7 @@
                 </a>
               </span>
               <span class="link-block">
-                <a href="https://arxiv.org/abs/2406.01278"
+                <a href="https://www.nature.com/articles/s41597-025-04529-4"
                 target="_blank" rel="noopener noreferrer"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -175,83 +175,178 @@
 </section>
 
 
-
-
-
-
+<!-- Dataset Construction. -->
 <section class="section">
   <div class="container is-max-desktop">
-    <div class="columns is-centered">
+<div class="columns is-centered">
+  <div class="column is-full-width">
+    <h2 class="title is-3">Dataset Construction</h2>
 
-         <!-- fruit-SALAD Explorer -->
-         <div class="column margin-right margin-bottom">
-          <div class="content">
-            <a href="https://style-aligned-artwork-datasets.github.io/fruit-explorer" target="_blank" rel="noopener noreferrer">
-              <h2 class="title is-3">fruit-SALAD Explorer</h2>
-              <img src="./static/images/fruit-SALAD_explorer.webp" alt="fruit-SALAD Explorer" class="image">
-            </a>
-            <p>
-              Explore how embedding models perceive similarity in the fruit-SALAD dataset with our <a href="https://style-aligned-artwork-datasets.github.io/fruit-explorer" target="_blank" rel="noopener noreferrer">interactive visualization tool</a> 
-            </p>
-            
+    <div class="content has-text-justified">
+      The fruit-SALAD benchmark consists of 10,000 synthetic images representing:    
+      <ul>
+        <li>10 fruit categories (e.g., apple, banana, kiwi)</li>
+        <li>10 artistic styles (e.g., crayon, watercolor, pixel art)</li>
+        <li>100 images per fruit-style combination</li>
+      </ul>
+      <br>
+      To generate the fruit-SALAD dataset, we developed a systematic pipeline leveraging <a href="https://github.com/Stability-AI/generative-models" target="_blank" rel="noopener noreferrer">Stable Diffusion</a> XL (SDXL) and <a href="https://github.com/google/style-aligned" target="_blank" rel="noopener noreferrer">StyleAligned</a>. We first experimented with various style prompts and fruit categories, selecting successful examples as reference images. Using StyleAligned with diffusion inversion, we then generated multiple instances of each fruit within the same style. After iterative refinements, we automated the process to produce 100 instances per fruit-style combination, ensuring both prototypicality and stylistic coherence. Throughout the supervised process, we manually filtered out inconsistent generations to maintain quality and coherence. As a result, the dataset inherently reflects our own biases in curating the final selection.
+    </div>
+    <!-- image -->
+     <div class="columns is-centered">
+      <div class="column is-full-width">
+        <figure class="image">
+          <img src="./static/images/SALAD-pipeline.webp" alt="Overview of the image generation process." class="image">
+        </figure>
+      </div>
+    </div>
+    <!-- image -->
+
+</div>
+</section>
+<!--/ Dataset Construction. -->
+
+<!-- Key Characteristics. -->
+<section class="section">
+  <div class="container is-max-desktop">
+<div class="columns is-centered">
+  <div class="column is-full-width">
+    <h2 class="title is-3">Key Characteristics</h2>
+
+    <div class="content has-text-justified">
+      Existing benchmark datasets lack the precise control to evaluate whether models primarily focus on the semantic category of an image (e.g., an apple) or its stylistic representation (e.g., watercolor painting). The fruit-SALAD dataset addresses this gap by offering a structured way to analyze these dimensions separately, enabling a precise study of how models weigh these factors. By maintaining a balanced dataset with equal representation of each fruit-style combination, it provides an interpretable benchmark for assessing model behavior. This makes the fruit-SALAD a valuable tool for both quantitative analysis and human-interpretable insights in various research fields.
+    </div>
+  </div>
+</div>
+</section>
+<!--/ Key Characteristics. -->
+
+<!-- Comparison & Analysis. -->
+<section class="section">
+  <div class="container is-max-desktop">
+<div class="columns is-centered">
+  <div class="column is-full-width">
+    <h2 class="title is-3">Comparison & Analysis</h2>
+
+    <div class="content has-text-justified">
+      To investigate how computational models process visual similarity, we constructed image embeddings by extracting features with a variety of common pre-trained deep learning models, including Vision Transformers, DINO, CLIP, ResNet, and others. These models differ in architecture and training paradigms, allowing for a diverse comparison of similarity perception. Additionally, we explored alternative representations, including our <a href="https://epjdatascience.springeropen.com/articles/10.1140/epjds/s13688-023-00397-3" target="_blank" rel="noopener noreferrer">Compression Ensembles</a> and one-hot encoded vectors, as reference models (e.g. “style_blind”).
+    </div>
+  </div>
+</div>
+</section>
+<!--/ Comparison & Analysis. -->
+
+<!-- Self-Recognition Test. -->
+<section class="section">
+  <div class="container is-max-desktop">
+<div class="columns is-centered">
+  <div class="column is-full-width">
+    <h2 class="title is-3">Self-Recognition Test</h2>
+
+    <div class="content has-text-justified">
+      We conducted a self-recognition test to assess whether models could correctly identify images of the same fruit-style combination. Similarity was measured by counting how many matching images appeared in the top 100 nearest neighbors.
+      <br><br>
+      Interestingly, certain fruit-style pairs – such as apples and oranges in watercolor – proved challenging across all models, while specific combinations posed difficulties for individual models. This highlights differences in how computational models perceive semantic content and artistic style.  
+    </div>
+        <!-- image -->
+        <div class="columns is-centered">
+          <div class="column is-full-width">
+            <figure class="image">
+              <img src="./static/images/Self-Recognition_Test.webp" alt="Self-recognition tests." class="image">
+            </figure>
           </div>
         </div>
-
-      <!-- Paper -->
-      <div class="column margin-bottom">
-        <div class="content">
-          <a href="https://arxiv.org/abs/2406.01278" target="_blank" rel="noopener noreferrer">
-              <h2 class="title is-3">ArXiv Paper</h2>
-              <img src="./static/images/arxiv-paper.webp" alt="ArXiv Paper" class="image">
-            </a>
-              <p>
-                <!-- Read the peer-reviewed fruit-SALAD paper on Scientific Data (Nature). -->
-                Read the pre-print of the fruit-SALAD paper on <a href="https://arxiv.org/abs/2406.01278" target="_blank" rel="noopener noreferrer">ArXiv</a>
-              </p>
-          
-        </div>
-      </div>
-
-    </div>
-
-    <div class="columns is-centered margin-bottom">
-
-      <!-- Dataset -->
-      <div class="column margin-right">
-        <div class="content">
-          <a href="https://zenodo.org/records/11158522" target="_blank" rel="noopener noreferrer">
-              <h2 class="title is-3">Zenodo Dataset</h2>
-              <img src="./static/images/zenodo-dataset.webp" alt="Zenodo Dataset" class="image">
-            </a>
-              <p>
-                Download the entire fruit-SALAD_10k dataset including high-resolution images, various vector embeddings, and other files from <a href="https://doi.org/10.5281/zenodo.11158522" target="_blank" rel="noopener noreferrer">Zenodo</a>
-              </p>
-        
-        </div>
-      </div>
-      <!--/ Clusters. -->
-
-      <!-- Code -->
-      <div class="column">
-        <div class="content">
-          <a href="https://github.com/Style-Aligned-Artwork-Datasets/fruit-SALAD" target="_blank" rel="noopener noreferrer">
-            <h2 class="title is-3">Code Repository</h2>
-            <img src="./static/images/generation-pipeline.webp" alt="GitHub Repository" class="image">
-          </a>
-
-            <p>
-              Generate your own Style Aligned Artwork Datasets by running the code on <a href="https://github.com/Style-Aligned-Artwork-Datasets/fruit-SALAD" target="_blank" rel="noopener noreferrer">GitHub</a>
-            </p>
-        </div>
-
-        </div>  
-      </div>
-      <!--/ Time. -->
-
-    </div>
-
+        <!-- image -->
+  </div>
+</div>
 </section>
+<!--/ Self-Recognition Test. -->
 
+
+
+<!-- Model Heatmaps. -->
+<section class="section">
+  <div class="container is-max-desktop">
+<div class="columns is-centered">
+  <div class="column is-full-width">
+    <h2 class="title is-3">Model Heatmaps</h2>
+
+    <div class="content has-text-justified">
+      To further visualize model behavior, we created “double-heatmaps” that illustrate their similarity perception within the dataset. Each matrix cell represents the average distance across 10,000 image pairs. To facilitate comparison, we sorted the matrix in two different ways: below the diagonal, images are arranged first by style and then by fruit category, while above the diagonal, the order is reversed – first by fruit category and then by style. 
+      <br><br>
+      The heatmaps use a color gradient from blue to yellow, where blue signifies lower distances (higher similarity) and yellow represents higher distances (lower similarity). This visualization helps to reveal patterns in how models encode and differentiate the images. For instance, strong blue clusters along one axis may indicate a model’s bias toward grouping images of the same style, while distinct diagonal bands may suggest a stronger focus on semantic categorization.
+    </div>
+    <!-- image -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <figure class="image">
+          <img src="./static/images/Model_Heatmaps.webp" alt="DINO-ViT-B-16_IN1k heatmaps indicating the mutual Mahalanobis distances of fruit-SALAD images." class="image">
+        </figure>
+      </div>
+    </div>
+    <!-- image -->
+     <br><br>
+         <!-- image -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <figure class="image">
+          <img src="./static/images/Model_Heatmaps_Overview.webp" alt="Heatmaps indicating the mutual Mahalanobis distance of fruit-SALAD_10k images according to different models." class="image">
+        </figure>
+      </div>
+    </div>
+    <!-- image -->
+  </div>
+</div>
+</section>
+<!--/ Model Heatmaps. -->
+
+<!-- Relative Model Comparison. -->
+<section class="section">
+  <div class="container is-max-desktop">
+<div class="columns is-centered">
+  <div class="column is-full-width">
+    <h2 class="title is-3">Relative Model Comparison</h2>
+
+    <div class="content has-text-justified">
+      To compare models systematically, we treated their pairwise distance matrices as multidimensional vectors and embedded them in the same metric space. This enabled a relative comparison of the models, revealing patterns in how different architectures encode similarity.
+    </div>
+    <!-- image -->
+    <div class="columns is-centered">
+    <div class="column is-full-width">
+      <figure class="image">
+        <img src="./static/images/Model_Comparison.webp" alt="Relative model comparison using principal component analysis (PCA) based on 23 standardized model vectors of 4,950 dimensions." class="image">
+      </figure>
+    </div>
+  </div>
+  <!-- image -->
+  </div>
+</div>
+</section>
+<!--/ Relative Model Comparison. -->
+
+<!-- fruit-SALAD Explorer. -->
+<section class="section">
+  <div class="container is-max-desktop">
+<div class="columns is-centered">
+  <div class="column is-full-width">
+    <h2 class="title is-3">fruit-SALAD Explorer</h2>
+
+    <div class="content has-text-justified">
+      Our <a href="https://style-aligned-artwork-datasets.github.io/fruit-explorer" target="_blank" rel="noopener noreferrer">interactive visualization tool</a> enables exploration of how different models perceive similarity. To achieve this, we used projection methods such as t-SNE, UMAP, and MDS to reduce the dimensionality of image embeddings, making the differences in similarity perception across models more interpretable.
+    </div>
+    <!-- image -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <figure class="image">
+          <img src="./static/images/fruit-SALAD_Explorer_apples_oranges.webp" alt="Apples vs. Oranges comparison in the fruit-SALAD Explorer." class="image">
+        </figure>
+      </div>
+    </div>
+    <!-- image -->
+  </div>
+</div>
+</section>
+<!--/ fruit-SALAD Explorer. -->
 
 <!-- Acknowledgements. -->
 
@@ -274,15 +369,18 @@
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
     <pre><code>
-@misc{ohm2024fruitsaladstylealignedartwork,
-  title         = {fruit-SALAD: A Style Aligned Artwork Dataset to reveal similarity perception in image embeddings}, 
-  author        = {Tillmann Ohm and Andres Karjus and Mikhail Tamm and Maximilian Schich},
-  year          = {2024},
-  eprint        = {2406.01278},
-  archivePrefix = {arXiv},
-  primaryClass  = {cs.CV},
-  url           = {https://arxiv.org/abs/2406.01278}, 
-},
+@article{ohm2025FruitSALAD,
+  title = {fruit-SALAD: A Style Aligned Artwork Dataset to reveal similarity perception in image embeddings},
+  volume = {12},
+  issn = {2052-4463},
+  url = {https://doi.org/10.1038/s41597-025-04529-4},
+  doi = {10.1038/s41597-025-04529-4},
+  number = {1},
+  journal = {Scientific Data},
+  author = {Ohm, Tillmann and Karjus, Andres and Tamm, Mikhail V. and Schich, Maximilian},
+  year = {2025},
+  pages = {254},
+}
 
 @dataset{ohm_2024_11158522,
   author       = {Ohm, Tillmann},
