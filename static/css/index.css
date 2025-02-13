@@ -163,3 +163,8 @@ body {
 .margin-bottom {
   margin-bottom: 40px;
 }
+
+figcaption {
+  font-style: italic;
+  margin-top: 6px;
+}
